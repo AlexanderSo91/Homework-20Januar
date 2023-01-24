@@ -50,7 +50,6 @@ public abstract class Transport<T extends Driver> implements Competing, com.sun.
 
     public abstract boolean diagnostics() throws DiagnosticFaildException;
 
-
     public String getBrand() {
         return brand;
     }

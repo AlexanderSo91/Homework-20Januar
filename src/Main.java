@@ -4,6 +4,7 @@ import driver.DriverD;
 import driver.DriverС;
 import exception.DiagnosticFaildException;
 import transport.Mehanic;
+import transport.STO;
 import transport.TransportType;
 
 import java.util.*;
@@ -17,13 +18,13 @@ public class Main {
         DriverD driverD = new DriverD("Водитель категории D", true, 2);
 
 
-        Car Car = new Car("BMW", "3", 1.6, driverB);
-        Bus Bus = new Bus("Iveco", "1345", 2.5, driverD);
-        Truck Truck = new Truck("Volvo", "Go", 3.0, driverC);
+        Car car = new Car("BMW", "3", 1.6, driverB);
+        Bus bus = new Bus("Iveco", "1345", 2.5, driverD);
+        Truck truck = new Truck("Volvo", "Go", 3.0, driverC);
 
 
         try {
-            System.out.println(Car.diagnostics());
+            System.out.println(car.diagnostics());
         } catch (DiagnosticFaildException e) {
             e.printStackTrace();
         }
@@ -35,24 +36,24 @@ public class Main {
 
 
         Mehanic mehanic1 = new Mehanic("Sodov Alex", "Michelin", TransportType.ALL);
-        Mehanic mehanic2 = new Mehanic("Sidorov mihail", "Michelin", TransportType.ALL);
+        Mehanic mehanic2 = new Mehanic("Sidorov Mihail", "Michelin", TransportType.ALL);
         Mehanic mehanic3 = new Mehanic("Nodo Alexey", "Michelin", TransportType.ALL);
 
-        Car.addMechanic(mehanic1);
-        Car.addMechanic(mehanic1);
-        Car.addMechanic(mehanic2);
+        car.addMechanic(mehanic1);
+        car.addMechanic(mehanic1);
+        car.addMechanic(mehanic2);
 
-        Bus.addMechanic(mehanic3);
+        bus.addMechanic(mehanic3);
 
-        Truck.addMechanic(mehanic1);
-        Truck.addMechanic(mehanic2);
-        Truck.addMechanic(mehanic3);
+        truck.addMechanic(mehanic1);
+        truck.addMechanic(mehanic2);
+        truck.addMechanic(mehanic3);
 
         List<Transport<?>> racers = new ArrayList<>();
 
-        racers.add(Car);
-        racers.add(Bus);
-        racers.add(Truck);
+        racers.add(car);
+        racers.add(bus);
+        racers.add(truck);
 
         Map<Transport<?>, Mehanic> transportMechanicMap = new HashMap<>();
 
@@ -67,6 +68,15 @@ public class Main {
         for (Transport<?> transport : racers) {
             System.out.println(transport + " " + transport.getDriver() + " " + transport.getMehanics());
         }
+
+        STO sto = new STO();
+        sto.addTransport(car);
+        sto.addTransport(bus);
+        sto.addTransport(truck);
+
+        sto.runTO();
+        sto.runTO();
+        sto.runTO();
 
     }
     private static void printInfo(Transport<?> transport) {
