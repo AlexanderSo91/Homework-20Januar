@@ -5,6 +5,7 @@ import driver.DriverС;
 import exception.DiagnosticFaildException;
 import transport.Mehanic;
 import transport.STO;
+import transport.Transport;
 import transport.TransportType;
 
 import java.util.*;

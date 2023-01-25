@@ -1,13 +1,15 @@
+package transport;
+
 import driver.Driver;
 import exception.DiagnosticFaildException;
-import transport.Mehanic;
+
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class Transport<T extends Driver> implements Competing, com.sun.jdi.connect.Transport {
+public  abstract class Transport<T extends Driver> implements Competing {
 
     private String brand;
     private String model;
@@ -84,7 +86,7 @@ public abstract class Transport<T extends Driver> implements Competing, com.sun.
 
     @Override
     public String toString() {
-        return "Transport{" +
+        return "transport.Transport{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", engineVolume=" + engineVolume +
@@ -99,6 +101,16 @@ public abstract class Transport<T extends Driver> implements Competing, com.sun.
 
 
 
+    public abstract String name();
+
+    public void maxSpeed() {
+    }
+
+    public void pitStop() {
+    }
+
+    public void theBestTimeLap() {
+    }
 }
 
 

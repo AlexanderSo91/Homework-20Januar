@@ -1,5 +1,6 @@
 import driver.DriverB;
 import exception.DiagnosticFaildException;
+import transport.Transport;
 
 public class Car extends Transport<DriverB> {
 

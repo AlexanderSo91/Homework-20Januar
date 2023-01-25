@@ -1,5 +1,6 @@
 import driver.DriverD;
 import exception.DiagnosticFaildException;
+import transport.Transport;
 
 
 public class Bus extends Transport<DriverD> {
