@@ -104,12 +104,17 @@ public  abstract class Transport<T extends Driver> implements Competing {
     public abstract String name();
 
     public void maxSpeed() {
+        maxSpeed();
     }
 
     public void pitStop() {
+        pitStop();
+
     }
 
     public void theBestTimeLap() {
+        theBestTimeLap();
+
     }
 }
 

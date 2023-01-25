@@ -47,4 +47,7 @@ public class Mehanic {
     public String toString() {
         return "Механик " + name + " из компании " + company;
     }
+
+    public void maintennance() {
+    }
 }
